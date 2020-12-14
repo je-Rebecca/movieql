@@ -1,24 +1,8 @@
-const people =[
-    {
-    name:"Rebecca",
-    age: 20,
-    gender:"female"
-    },
-    {
-    name:"Ken",
-    age: 25,
-    gender:"male"
-     },
-    {
-     name:"Jack",
-     age: 30,
-     gender:"male"
-     }
-];
+import {getMovies } from "./db";
 
 const resolver= {
     Query :{
-        people: () => people
+        movies: (_, {rating,limit}) => getMovies(limit,rating)
     }
 };
 
